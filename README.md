@@ -10,10 +10,10 @@ Ce fork contient les mêmes fichiers que ce dépôt, mais vous pouvez les modifi
 puis git add/git commit/git push pour mettre à jour le dépôt sur github)
 - Si vous utilisez Binder, il faut générer un lien qui vous permettra d'utiliser Binder avec vos fichiers dedans.
 Pour cela allez sur https://jupyterhub.github.io/nbgitpuller/link.html, cliquez sur Binder en haut à droite puis :
-Dans Git Environment Repository URL : https://github.com/fortierq/mp2i-binder
-Dans Git Content Repository URL : l'adresse URL de votre fork
-Sélectionnez JupyterLab
-Puis copier-coller et conservez l'adresse URL qui est apparue en haut de la page : c'est elle qui vous permettra d'utiliser Binder avec vos fichiers.  
+  - Dans Git Environment Repository URL : https://github.com/fortierq/mp2i-binder  
+  - Dans Git Content Repository URL : l'adresse URL de votre fork  
+  - Sélectionnez JupyterLab  
+  - Puis copier-coller et conservez l'adresse URL qui est apparue en haut de la page : c'est elle qui vous permettra d'utiliser Binder avec vos fichiers.  
 
 Travail demandé :
 - Vous devez implémenter les algorithmes/structures de données du cours et/ou vus en TD.
@@ -23,7 +23,7 @@ les tests, obligatoirements présents, seront dans des notebooks Jupyter.
 Pour créer un fichier .ml avec Binder : clic droit dans l'arborescence de fichier (sur la partie gauche) puis New file 
 et changer l'extension en .ml.
 - Les algorithmes/structures de données dans les .ml doivent être commentés.
-- Le dépôt contient déjà des fichiers d'exemples, notamment pour importer un .ml (avec #use "..."). Veuillez vous en inspirer. ds (Data Structures) est un dossier qui contient des structures de données, algo contient des algorithmes (avec un exemple d'algorithme de tri : le tri à bulles).
+- Le dépôt contient déjà des fichiers d'exemples, notamment pour importer un .ml (avec #use "..."). Veuillez vous en inspirer. ds (Data Structures) est un dossier qui contient des structures de données, algo contient des algorithmes (avec un exemple d'algorithme de tri : le tri à bulles). Ces fichiers constituent juste un exemple, vous pouvez les remplacer/supprimer si vous voulez faire autrement. 
 
 Je vous laisse des libertés sur les algorithmes/structures de données que vous voulez implémenter, et sur la façon exacte
 de le faire, suivant votre niveau et vos ambitions. Voici une liste de suggestions :
