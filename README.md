@@ -23,7 +23,7 @@ les tests, obligatoirements présents, seront dans des notebooks Jupyter.
 Pour créer un fichier .ml avec Binder : clic droit dans l'arborescence de fichier (sur la partie gauche) puis New file 
 et changer l'extension en .ml.
 - Les algorithmes/structures de données dans les .ml doivent être commentés.
-- Le dépôt contient déjà des fichiers d'exemples, notamment pour importer un .ml (avec #use "..."). Veuillez vous en inspirer. ds (Data Structures) est un dossier qui contient des structures de données, algo contient des algorithmes.
+- Le dépôt contient déjà des fichiers d'exemples, notamment pour importer un .ml (avec #use "..."). Veuillez vous en inspirer. ds (Data Structures) est un dossier qui contient des structures de données, algo contient des algorithmes (avec un exemple d'algorithme de tri : le tri à bulles).
 
 Je vous laisse des libertés sur les algorithmes/structures de données que vous voulez implémenter, et sur la façon exacte
 de le faire, suivant votre niveau et vos ambitions. Voici une liste de suggestions :
