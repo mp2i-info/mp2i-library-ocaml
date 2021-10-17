@@ -14,6 +14,8 @@ Pour cela allez sur https://jupyterhub.github.io/nbgitpuller/link.html, cliquez 
   - Dans Git Content Repository URL : l'adresse URL de votre fork  
   - Sélectionnez JupyterLab  
   - Puis copier-coller et conservez l'adresse URL qui est apparue en haut de la page : c'est elle qui vous permettra d'utiliser Binder avec vos fichiers.  
+  - Attention à ne pas perdre vos données : quand vous avez fini d'utiliser Binder, il faut retourner sur Github et copier/coller le contenu de vos fichiers dans de nouveaux fichiers sur Github 
+![img](https://user-images.githubusercontent.com/49362475/137639518-972b5b78-248e-416d-bb8d-6ec7aaf8be70.png)
 
 Travail demandé :
 - Vous devez implémenter les algorithmes/structures de données du cours et/ou vus en TD.
