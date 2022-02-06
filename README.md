@@ -34,7 +34,7 @@ de le faire, suivant votre niveau et vos ambitions. Voici une liste de suggestio
 - Tri fusion, tri rapide
 - Tableau dynamique
 - Pile, file (avec ou sans type abstrait)
-- Table de hachage, dictionnaire
+- Table de hachage, dictionnaire, ensemble 
 - Liste doublement chaînée (cyclique)
 - Recherche de la tranche maximum dans un tableau/une liste
 - Recherche d'un doublon dans un tableau/une liste
