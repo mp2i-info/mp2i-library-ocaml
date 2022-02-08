@@ -1,0 +1,4 @@
+(include_subdirs unqualified)
+(library
+ (public_name mp2i)
+ (name mp2i))
