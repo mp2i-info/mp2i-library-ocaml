@@ -1,4 +1,4 @@
-module PrioQueue =
+(* module PrioQueue =
     struct
       type priority = int
       type 'a queue = Empty | Node of priority * 'a * 'a queue * 'a queue
@@ -23,4 +23,4 @@ module PrioQueue =
       let extract = function
           Empty -> raise Queue_is_empty
         | Node(prio, elt, _, _) as queue -> (prio, elt, remove_top queue)
-    end
+    end *)

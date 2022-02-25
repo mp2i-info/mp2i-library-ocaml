@@ -1,4 +1,10 @@
+.PHONY: test
 doc:
-	rm -r _html/
-	mkdir _html/
-	find . -name "*.ml" | xargs grep -iL "checkpoint" | xargs ocamldoc -html -d _html
+	dune build @doc
+	firefox _build/default/_doc/_html/index.html
+
+top:
+	dune utop lib -- -implicit-bindings
+
+test:
+	dune runtest
