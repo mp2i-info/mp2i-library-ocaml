@@ -1,0 +1,4 @@
+(library (name test)
+ (libraries mp2i)
+ (inline_tests)
+ (preprocess (pps ppx_inline_test)))

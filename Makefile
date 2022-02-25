@@ -7,4 +7,5 @@ top:
 	dune utop lib -- -implicit-bindings
 
 test:
+	dune build
 	dune runtest
