@@ -1,23 +1,21 @@
-module type S = sig
+
+
+module type FunStack = sig
+  exception Empty
   type 'a t
   val empty : 'a t
   val peek : 'a t -> 'a
   val push : 'a -> 'a t -> 'a t
   val pop : 'a t -> 'a t
+  val rev : 'a t -> 'a t
 end
 
-module ListStack : S = struct
+module ListStack : FunStack = struct
+  exception Empty  
   type 'a t = 'a list
   let empty = []
-  let peek = List.hd
+  let peek = function | [] -> raise Empty | e::_ -> e
   let push = List.cons
-  let pop = List.tl
-end
-
-module CustomStack : S = struct
-  type 'a t = 'a list
-  let peek = List.hd
-  let empty = []
-  let push = List.cons
-  let pop = List.tl
+  let pop = function | [] -> raise Empty | _::q -> q
+  let rev = List.rev
 end
