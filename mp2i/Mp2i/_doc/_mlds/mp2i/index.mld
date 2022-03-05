@@ -1,0 +1,4 @@
+{0 mp2i index}
+{1 Library mp2i}
+The entry point of this library is the module:
+{!module-Mp2i}.
