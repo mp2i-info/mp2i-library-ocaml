@@ -7,6 +7,8 @@ module type Graph = sig
   val add_edge : vertex -> vertex -> t -> unit
   val del_edge : vertex -> vertex -> t -> unit
   val neighbors : vertex -> t -> vertex list
+  val vertices : t -> vertex list
+  val copy : t -> t
 end
 
 module MatrixGraph : (Graph with type vertex := int) = struct
@@ -23,7 +25,8 @@ module MatrixGraph : (Graph with type vertex := int) = struct
       else if m.(i).(j) <> 0 then j::aux (j+1)
       else aux (j+1) in
     aux 0
-
+  let vertices m = Base.List.range 0 (n m)
+  let copy m = Array.map Array.copy m
 end
 
 (* module ListGraph : G = struct
@@ -35,6 +38,17 @@ end
   let del_edge i j m = m.(i).(j) <- 0
   let neighbors i m = Array.to_list m.(i)
 end *)
+
+module DirectedGraph (G : Graph) = struct
+  type t = G.t
+  let empty n = G.empty n
+  let is_edge i j = G.is_edge i j
+  let add_edge i j g = G.add_edge i j g; G.add_edge j i g
+  let del_edge i j g = G.del_edge i j g; G.del_edge j i g
+  let neighbors i = G.neighbors i
+  let vertices = G.vertices
+  let copy = G.copy
+end
 
 module GraphDraw (G : Graph with type vertex := int) = struct
   let to_pdf file_out g =
@@ -49,13 +63,12 @@ module GraphDraw (G : Graph with type vertex := int) = struct
 \\tikz \\graph [spring layout] {\n";
     let seen = Array.make (G.n g) false in
     let rec dfs p v =
-      printf "%i %i@. " v p;
       if not seen.(v) then (
         seen.(v) <- true;
-        if p <> -1 then fprintf f "%i -- %i" v p;
+        if p <> -1 then fprintf f "%i -- %i;\n" v p;
         List.iter (dfs v) (G.neighbors v g)
       ) in
-    dfs (-1) 0;
+    List.iter (dfs (-1)) (G.vertices g);
     fprintf f ";\n};\n\\end{document}\n";
     close_out f;
     let _ = sprintf "lualatex -shell-escape %s > /dev/null 2>&1" tex 

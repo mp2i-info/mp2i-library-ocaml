@@ -3,4 +3,5 @@
  (public_name mp2i)
  (name mp2i)
  (inline_tests)
- (preprocess (pps ppx_inline_test)))
+ (preprocess (pps ppx_inline_test))
+ (libraries base))
