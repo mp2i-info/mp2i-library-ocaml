@@ -1,0 +1,11 @@
+{
+    "name": "OCaml",
+    "dockerFile": "Dockerfile",
+    "remoteUser": "ocaml",
+    "settings": {
+        "editor.formatOnSave": true,
+    },
+    "extensions": [
+        "ocamllabs.ocaml-platform"
+    ]
+}
