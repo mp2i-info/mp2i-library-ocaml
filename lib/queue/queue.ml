@@ -26,7 +26,7 @@ module type ImpQueue = sig
 end
 
 (** Functional Queue implemented with 2 [FunStack] *)
-module TwoStackQueue (S : Mp2i__Stack.FunStack) : FunQueue = struct
+module TwoStackQueue (S : Stack.FunStack) : FunQueue = struct
   type 'a t = 'a S.t * 'a S.t
   let empty = S.empty, S.empty
   let is_empty (s1, s2) = S.is_empty s1 && S.is_empty s2
