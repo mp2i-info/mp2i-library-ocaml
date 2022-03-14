@@ -8,7 +8,7 @@ let dijkstra g w r =
   let n = Array.length g in
   let q = empty () in
   let d = Array.make n max_int in
-  add q (r, 0);
+  add q (0, r);
   while not (is_empty q) do
     let du, u = take_min q in
     if d.(u) = max_int then (
@@ -27,3 +27,4 @@ let bellman g w r =
       List.iter (fun v -> d.(v) <- min d.(v) (sum d.(u) (w u v))) g.(u)
     done
   done;
+  d
