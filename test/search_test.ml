@@ -3,5 +3,7 @@ let%test "search" = Mp2i__Search.(
   boyer_moore "blabla" "bl" = 0 &&
   boyer_moore "this is a test" "tt" = -1 &&
   boyer_moore "this is a test" "this is a test" = 0 &&
-  boyer_moore "this is a test" "test" = 10
+  boyer_moore "this is a test" "test" = 10 &&
+  boyer_moore "ttetestest" "test" = 3 &&
+  boyer_moore "ttetesetes" "test" = -1
 )
