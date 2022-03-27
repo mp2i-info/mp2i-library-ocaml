@@ -2,7 +2,7 @@ let boyer_moore text w =
   let k, n = String.length w, String.length text in
   let module M = Map.Make(Char) in
   let rec make_skip i =
-    if i = k then M.empty
+    if i = k - 1 then M.empty
     else make_skip (i+1) |> M.add w.[k - i - 1] i in
   let skip = make_skip 0 in
 
