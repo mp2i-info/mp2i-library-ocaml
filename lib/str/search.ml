@@ -12,7 +12,7 @@ let boyer_moore text w =
     else if w.[k - j - 1] = text.[i - j] then search i (j + 1)
     else match M.find_opt text.[i - j] skip with
       | Some s -> search (max (i + 1) (s + i)) 0
-      | None -> search (i + k) 0 in
+      | None -> search (i + k - j) 0 in
   search (k - 1) 0
 
 let hash b q s =
@@ -34,9 +34,12 @@ let rabin_karp text w =
   let b = 256 in (* number of characters (basis) *)
   let p = pow b (k - 1) q in (* maximum power of b *)
   let h_w = hash b q w in
+  Format.printf "%s %s %d@." w text h_w;
   let rec search i h =
     if h = h_w && w = String.sub text i k then i
     else if i >= n - k then -1
-    else let h_ = (b*(h - p*Char.code text.[i]) + Char.code text.[i + k]) mod q in
-      search (i + 1) (if h_ >= 0 then h_  else h_ + q) in
+    else (
+      Format.printf "%d@." h;
+      (b*(h mod p) + Char.code text.[i + k]) mod q
+      |> search (i + 1)) in
   search 0 (hash b q (String.sub text 0 k))
