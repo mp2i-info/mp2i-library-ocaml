@@ -1,4 +1,4 @@
-open PriorityQueue.BstQueue
+(* open PriorityQueue.BstQueue
 
 let sum x y =
   if x = max_int || y = max_int then max_int
@@ -24,7 +24,19 @@ let bellman g w r =
   d.(r) <- 0;
   for k = 0 to n - 2 do
     for u = 0 to n - 1 do
-      List.iter (fun v -> d.(v) <- min d.(v) (sum d.(u) (w u v))) g.(u)
+      List.iter (fun v -> 
+        d.(v) <- min d.(v) (sum d.(u) (w u v))
+      ) g.(u)
     done
   done;
   d
+
+  let floyd_warshall d =
+    let n = Array.length w in
+    for k = 0 to n - 1 do
+      for i = 0 to n - 1 do
+        for j = 0 to n - 1 do
+          d.(i).(j) <- min d.(i).(j) (sum d.(i).(k) d.(k).(j))
+        done
+      done
+    done *)

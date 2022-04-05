@@ -1,4 +1,6 @@
-(library (name test)
+(library
+ (name test)
  (libraries mp2i)
  (inline_tests)
- (preprocess (pps ppx_inline_test)))
+ (preprocess
+  (pps ppx_inline_test)))
