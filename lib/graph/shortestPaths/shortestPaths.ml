@@ -31,12 +31,14 @@ let bellman g w r =
   done;
   d
 
-  let floyd_warshall d =
-    let n = Array.length w in
+let floyd_warshall g =
+    let n = Array.length g in
+    let d = Array.map Array.copy g in (* copie de g *)
     for k = 0 to n - 1 do
       for i = 0 to n - 1 do
         for j = 0 to n - 1 do
           d.(i).(j) <- min d.(i).(j) (sum d.(i).(k) d.(k).(j))
         done
       done
-    done *)
+    done;
+    d *)
