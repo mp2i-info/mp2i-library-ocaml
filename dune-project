@@ -1,3 +1,6 @@
 (lang dune 2.9)
 (name mp2i)
+(maintainers fortierq)
+(authors fortierq)
+(homepage https://github.com/fortierq/mp2i-library)
 (generate_opam_files true)
