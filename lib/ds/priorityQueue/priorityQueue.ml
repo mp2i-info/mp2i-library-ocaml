@@ -45,8 +45,8 @@ module BstPQ : FunPQ = struct
                       else N(r, take_min g, d)
 end
 
-module Heap : ImpPQ = struct
-  type 'a t = { a : 'a array; mutable n : int }
+module Heap = struct
+  type 'a t = { a : int array; mutable n : int }
   let pred i = (i - 1)/2
   let g i = 2*i + 1
   let d i = 2*i + 2
@@ -67,16 +67,16 @@ module Heap : ImpPQ = struct
       swap heap i j;
       down heap j
     )
-    let empty () = { a = Array.make 100 0; n = 0 }
-    let is_empty h = h.n = 0
-    let add e heap =
-    heap.a.(heap.n) <- e;
-    up heap heap.n;
-    heap.n <- heap.n + 1
-    let rec take_min heap =
-      swap heap 0 (heap.n - 1);
-      heap.n <- heap.n - 1;
-      down heap 0;
-      heap.a.(heap.n)
-    let peek_min heap = heap.a.(0)
+  let empty () = { a = [||]; n = 0 }
+  let is_empty h = h.n = 0
+  let add e heap =
+  heap.a.(heap.n) <- e;
+  up heap heap.n;
+  heap.n <- heap.n + 1
+  let take_min heap =
+    swap heap 0 (heap.n - 1);
+    heap.n <- heap.n - 1;
+    down heap 0;
+    heap.a.(heap.n)
+  let peek_min heap = heap.a.(0)
 end
