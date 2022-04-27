@@ -18,7 +18,7 @@ jobs:
           ocaml-compiler: 4.13.x
           dune-cache: true
       
-      - run: opam install ppx_inline_test
+      - run: opam install ppx_inline_test base core batteries
   
       - name: Deploy odoc to GitHub Pages
         uses: ocaml/setup-ocaml/deploy-doc@v2
