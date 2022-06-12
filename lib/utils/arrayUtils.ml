@@ -1,5 +1,5 @@
 (** [dichotomy a e] returns true if [a] contains [e], false otherwise. [a] must be a sorted array. *)
-let binary_search a e = 
+let binary_search e a = 
   let rec aux i j = (* is e in a.(i), ..., a.(j) ? *)
       if i > j then false
       else let m = (i + j)/2 in
