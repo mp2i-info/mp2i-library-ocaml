@@ -3,6 +3,8 @@
 (library
  (public_name mp2i)
  (name mp2i)
+ (instrumentation
+  (backend bisect_ppx))
  (inline_tests)
  (preprocess
   (pps ppx_inline_test))
