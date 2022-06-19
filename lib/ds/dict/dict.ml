@@ -1,6 +1,6 @@
 module type DictImp = sig
   type ('k, 'v) d
-  val empty: ('k, 'v) d
+  val empty : ('k, 'v) d
   val get : 'k -> ('k, 'v) d -> 'v option
   val add : 'k -> 'v -> ('k, 'v) d -> ('k, 'v) d
 end
