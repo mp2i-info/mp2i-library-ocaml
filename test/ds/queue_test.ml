@@ -1,5 +1,5 @@
-open Mp2i__Queue
-open Mp2i__Stack
+open Mp2i.Queue
+open Mp2i.Stack
 
 module Q = TwoStackQueue(ListStack)
 

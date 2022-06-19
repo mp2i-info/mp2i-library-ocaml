@@ -1,11 +1,11 @@
-open Mp2i__Graph
+open Mp2i.Graph
 (* module D = DirectedGraph(MatrixGraph) *)
 
 let g = MatrixGraph.empty 4;;
 (* let g_dir = D.empty 4;; *)
 let edges = [(0, 1); (1, 2); (0, 2); (2, 3)];;
 List.iter (fun (u, v) -> MatrixGraph.add_edge u v g) edges;;
-(* List.iter (fun (u, v) -> D.add_edge u v g_dir) edges;; *)
+(* List.iter (fun (u, v) -> D.add_edge u v g_dir) e dges;; *)
 
 let%test "edges" =
   List.for_all (fun (u, v) -> MatrixGraph.is_edge u v g) edges;;

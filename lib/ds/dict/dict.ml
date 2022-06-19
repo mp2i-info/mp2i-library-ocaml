@@ -12,5 +12,5 @@ module DictList : DictImp = struct
     | [] -> None
     | (k1, v1)::q -> if k = k1 then Some v1 else get k q
 
-  let rec add k v d = (k, v)::d
+  let add k v d = (k, v)::d
 end

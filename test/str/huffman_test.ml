@@ -1,4 +1,4 @@
-open Mp2i__Huffman
+open Mp2i.Huffman
 
 let%test "huffman" = 
   let _ = [|(20, 'a'); (15, 'b'); (7, 'c'); (14, 'd'); (44, 'e')|]
