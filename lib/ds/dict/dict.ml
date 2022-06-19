@@ -11,9 +11,8 @@ module DictList : DictFun = struct
   type ('k, 'v) d = ('k * 'v) list
   let empty = []
   let rec get k = function
-  | [] -> failwith "key not found"
-  | (k1, v1)::q -> if k = k1 then v1 else get k q
-
+    | [] -> failwith "key not found"
+    | (k1, v1)::q -> if k = k1 then v1 else get k q
   let rec get_option k = function
     | [] -> None
     | (k1, v1)::q -> if k = k1 then Some v1 else get_option k q
