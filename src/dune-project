@@ -1,0 +1,32 @@
+(lang dune 2.9)
+
+(name mp2i)
+
+(maintainers fortierq)
+
+(authors fortierq)
+
+(homepage https://github.com/fortierq/mp2i-library-ocaml)
+
+(source
+ (github fortierq/mp2i-library-ocaml))
+
+(package
+ (name mp2i)
+ (synopsis "Algorithmes pour la MP2I")
+ (description "Algorithmes pour la MP2I")
+ (depends
+  ocaml
+  utop
+  dune
+  ppx_inline_test
+  base
+  core
+  batteries
+  bisect_ppx
+  qcheck
+  ocaml-lsp-server
+  ocamlformat
+  ocamlformat-rpc))
+
+(generate_opam_files true)

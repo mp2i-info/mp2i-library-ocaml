@@ -1,1 +1,3 @@
-En construction...
+# Installation et utilisation
+
+Utiliser src/Makefile
