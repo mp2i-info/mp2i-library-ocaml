@@ -1,7 +1,7 @@
 .PHONY: test
 
 switch:
-	opam switch create . --deps-only ocaml-base-compiler.4.14.0
+	opam switch create . --deps-only ocaml-base-compiler.4.14.0; \
 	eval $(opam env)
 
 build:
