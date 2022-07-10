@@ -31,6 +31,4 @@ let frequent l (module D : DictFun) =
   D.keys d
   |> List.map (fun k -> D.get k d, k)
   |> List.fold_left max (min_int, 0)
-  |> snd
-
-frequent [3; 1; 2; 3; 3; 4; 2; 1; 2; 2] (module DictList : DictFun)
+  |> snd;;
