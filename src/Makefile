@@ -4,6 +4,10 @@ switch:
 	opam switch create . --deps-only ocaml-base-compiler.4.14.0; \
 	eval $(opam env)
 
+install:
+	opam install .; \
+	eval $(opam env)
+
 build:
 	dune build
 
