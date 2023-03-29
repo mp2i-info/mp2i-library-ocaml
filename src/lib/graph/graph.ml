@@ -39,17 +39,6 @@ end
   let neighbors i m = Array.to_list m.(i)
 end *)
 
-module DirectedGraph (G : Graph) = struct
-  type t = G.t
-  let empty n = G.empty n
-  let is_edge i j = G.is_edge i j
-  let add_edge i j g = G.add_edge i j g; G.add_edge j i g
-  let del_edge i j g = G.del_edge i j g; G.del_edge j i g
-  let neighbors i = G.neighbors i
-  let vertices = G.vertices
-  let copy = G.copy
-end
-
 module GraphDraw (G : Graph with type vertex := int) = struct
   let to_pdf file_out g =
     let open Printf in
